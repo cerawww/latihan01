@@ -1,50 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<style>
-* {
-  box-sizing: border-box;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4 Kolom Responsif</title>
+  <style>
+    /* Reset dasar */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 30px;
-  text-align: center;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
 
-.flex-item-left {
-  background-color: #f1f1f1;
-  padding: 10px;
-  flex: 50%;
-}
+    /* Container Flex */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
 
-.flex-item-right {
-  background-color: dodgerblue;
-  padding: 10px;
-  flex: 50%;
-}
+    /* Gaya kolom */
+    .column {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      flex: 1 1 calc(25% - 16px); /* 4 kolom */
+      text-align: center;
+      border-radius: 8px;
+      min-width: 200px; /* Hindari terlalu kecil */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
 
-/* Responsive layout - makes a one column-layout instead of a two-column layout */
-@media (max-width: 800px) {
-  .flex-item-right, .flex-item-left {
-    flex: 100%;
-  }
-}
-</style>
+    /* Responsif: 2 kolom di layar medium */
+    @media (max-width: 768px) {
+      .column {
+        flex: 1 1 calc(50% - 16px);
+      }
+    }
+
+    /* Responsif: 1 kolom di layar kecil */
+    @media (max-width: 480px) {
+      .column {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<h1>Responsive Flexbox</h1>
-
-<p>In this example, we change the percentage of flex to create different layouts for different screen sizes.</p>
-<p><b>Resize the browser window to see that the direction changes when the 
-screen size is 800px wide or smaller.</b></p>
-
-<div class="flex-container">
-  <div class="flex-item-left">1</div>
-  <div class="flex-item-right">2</div>
-</div>
+  <h2>Contoh 4 Kolom Responsif</h2>
+  <div class="container">
+    <div class="column">Hello World 1</div>
+    <div class="column">Hello World 2</div>
+    <div class="column">Hello World 3</div>
+    <div class="column">Hello World 4</div>
+  </div>
 
 </body>
 </html>
