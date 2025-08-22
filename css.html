@@ -8,7 +8,7 @@
 ​
 .flex-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   font-size: 30px;
   text-align: center;
 }
@@ -25,10 +25,10 @@
   flex: 50%;
 }
 ​
-/* Responsive layout - makes a one column-layout instead of a two-column layout */
+/* Responsive layout - makes a one column-layout instead of two-column layout */
 @media (max-width: 800px) {
-  .flex-item-right, .flex-item-left {
-    flex: 100%;
+  .flex-container {
+    flex-direction: column;
   }
 }
 </style>
@@ -37,7 +37,8 @@
 ​
 <h1>Responsive Flexbox</h1>
 ​
-<p>In this example, we change the percentage of flex to create different layouts for different screen sizes.</p>
+<p>The "flex-direction: row;" stacks the flex items horizontally (from left to right).</p>
+<p>The "flex-direction: column;" stacks the flex items vertically (from top to bottom).</p>
 <p><b>Resize the browser window to see that the direction changes when the 
 screen size is 800px wide or smaller.</b></p>
 ​
@@ -48,4 +49,5 @@ screen size is 800px wide or smaller.</b></p>
 ​
 </body>
 </html>
+​
 ​
